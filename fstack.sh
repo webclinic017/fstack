@@ -20,18 +20,18 @@ sudo apt-get -q install -y make meson git gcc openssl libssl-dev bc libnuma1 lib
 set -x
 set -e
 
-KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
-kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $5 }')"
-major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $5 }')"
+#KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
+#kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $5 }')"
+#major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $5 }')"
 
-sudo apt-get install -y build-essential bc curl flex bison libelf-dev
-sudo apt-get install bzip2
-mkdir -p /usr/src/linux
-curl "https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/"     
-cd /usr/src/linux
-mkdir -p /lib/modules/$(uname -r)
-ln -sf /usr/src/linux /lib/modules/$(uname -r)/source
-ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
+#sudo apt-get install -y build-essential bc curl flex bison libelf-dev
+#sudo apt-get install bzip2
+#mkdir -p /usr/src/linux
+#curl "https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/"     
+#cd /usr/src/linux
+##mkdir -p /lib/modules/$(uname -r)
+#ln -sf /usr/src/linux /lib/modules/$(uname -r)/source
+#ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
 
 
 KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
