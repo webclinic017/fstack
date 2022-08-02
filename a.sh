@@ -1,9 +1,9 @@
 #!/bin/bash
+apt update
+apt upgrade -y
+
 set -x
 set -e
-
-apt get update
-apt get upgrade -y
 
 apt install -y sudo meson wget git nano 
 sudo -i
