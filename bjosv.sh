@@ -15,7 +15,7 @@ echo "IF=enp0s8" | sudo tee -a /etc/environment
 sudo apt-get -q update
 sudo apt-get -q install -y \
      make meson git gcc openssl libssl-dev \
-     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python \
+     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python3.9 \
      net-tools pkg-config
 
 ################################################################################
