@@ -4,7 +4,7 @@ mkdir -p /data/f-stack
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
 # Install libnuma-dev
-apt-get install libnuma-dev
+sudo apt -y install libnuma-dev
 cd f-stack
 
 # Compile DPDK
@@ -25,11 +25,11 @@ mv /usr/bin/pkg-config /usr/bin/pkg-config.bak
 ln -s /usr/local/bin/pkg-config /usr/bin/pkg-config
 
 # On Ubuntu, use gawk instead of the default mawk.
-sudo apt-get install gawk  # or execute `sudo update-alternatives --config awk` to choose gawk.
+sudo apt-get -y install gawk  # or execute `sudo update-alternatives --config awk` to choose gawk.
 
 # Install dependencies for F-Stack
-apt-get install gcc make libssl-dev                            # On ubuntu
-apt-get install gcc gmake openssl pkgconf libepoll-shim       # On FreeBSD
+sudo apt-get -y gcc make libssl-dev                            # On ubuntu
+#apt-get install gcc gmake openssl pkgconf libepoll-shim       # On FreeBSD
 
 # Compile f-stack lib
 export FF_PATH=/data/f-stack
