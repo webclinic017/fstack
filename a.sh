@@ -1,12 +1,12 @@
-#!/bin/bash
 apt update
 apt upgrade -y
 
-set -x
-set -e
-
 apt install -y sudo meson wget git nano 
 sudo -i
+
+#!/bin/bash
+set -x
+set -e
 
 apt-get install -y build-essential bc curl flex bison libelf-dev
 
