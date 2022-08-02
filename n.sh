@@ -2,10 +2,10 @@
 # clone F-Stack
 mkdir -p /data
 mkdir -p /data/f-stack
-git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
-# Install libnuma-dev
-sudo apt -y install libnuma-dev
+# Install git libnuma-dev
+sudo apt -y install git libnuma-dev
+git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 cd /data/f-stack
 
 # Compile DPDK
