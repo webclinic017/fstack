@@ -71,7 +71,7 @@ mount -t hugetlbfs nodev /mnt/huge
 echo 0 > /proc/sys/kernel/randomize_va_space
 
 # Install python for running DPDK python scripts
-sudo apt install python # On ubuntu
+# sudo apt install python # On ubuntu
 
 # Offload NIC
 # For Linux:
