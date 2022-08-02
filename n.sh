@@ -1,5 +1,6 @@
 #!/bin/bash
 # clone F-Stack
+mkdir -p /data
 mkdir -p /data/f-stack
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
