@@ -17,15 +17,15 @@ sudo apt-get -q install -y make meson git gcc openssl libssl-dev bc libnuma1 lib
 ################################################################################
 
 #!/bin/bash
-#set -x
-#set -e
+set -x
+set -e
 
 KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
 kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $5 }')"
 major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $5 }')"
 
-apt-get install -y build-essential bc curl flex bison libelf-dev
-apt-get install bzip2
+sudo apt-get install -y build-essential bc curl flex bison libelf-dev
+sudo apt-get install bzip2
 mkdir -p /usr/src/linux
 curl "https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/"     
 cd /usr/src/linux
@@ -38,7 +38,7 @@ KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
 kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $1 }')"
 major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $1 }')"
 
-apt-get install -y build-essential bc curl flex bison libelf-dev
+sudo apt-get install -y build-essential bc curl flex bison libelf-dev
 
 mkdir -p /usr/src/linux
 curl -sL "https://www.kernel.org/pub/linux/kernel/v${major_version}.x/linux-$kernel_version.tar.gz"     | tar --strip-components=1 -xzf - -C /usr/src/linux
