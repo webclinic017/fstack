@@ -17,8 +17,8 @@ sudo apt-get -q install -y make meson git gcc openssl libssl-dev bc libnuma1 lib
 ################################################################################
 
 #!/bin/bash
-set -x
-set -e
+#set -x
+#set -e
 
 KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
 kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $5 }')"
