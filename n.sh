@@ -6,7 +6,7 @@ git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
 # Install libnuma-dev
 sudo apt -y install libnuma-dev
-cd f-stack
+cd /data/f-stack
 
 # Compile DPDK
 cd dpdk/
