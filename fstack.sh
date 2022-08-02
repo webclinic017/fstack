@@ -14,7 +14,7 @@ sudo apt-get -q update
 sudo apt-get -q upgrade -y
 
 sudo apt-get -q install -y \
-     wget nano make meson git gcc openssl libssl-dev linux-headers-$(uname -r) \
+     nano make meson git gcc openssl libssl-dev linux-headers-$(uname -r) \
      bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python \
      net-tools pkg-config
 
