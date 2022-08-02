@@ -1,14 +1,13 @@
-#!/bin/sh
-set -e
+apt-get -q update
+apt-get -q upgrade -y
+
+apt-get -q install sudo -y
+
+sudo i
+
+#!/bin/bash
 set -x
-alias sudo="sudo -E"
-
-export FSTACK="${PWD}/f-stack"
-export IF="enp0s8"
-export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
-
-echo "FSTACK=${PWD}/f-stack" | sudo tee -a /etc/environment
-echo "IF=enp0s8" | sudo tee -a /etc/environment
+set -e
 
 sudo apt-get -q update
 sudo apt-get -q install -y \
@@ -17,8 +16,60 @@ sudo apt-get -q install -y \
      net-tools pkg-config
 
 ################################################################################
+# Download kernel headers
+################################################################################
+
+#!/bin/bash
+set -x
+set -e
+
+KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
+kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $5 }')"
+major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $5 }')"
+
+apt-get install -y build-essential bc curl flex bison libelf-dev
+apt-get install bzip2
+mkdir -p /usr/src/linux
+curl "https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/"     
+cd /usr/src/linux
+mkdir -p /lib/modules/$(uname -r)
+ln -sf /usr/src/linux /lib/modules/$(uname -r)/source
+ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
+
+
+KERNEL_VERSION="${KERNEL_VERSION:-$(uname -r)}"
+kernel_version="$(echo "${KERNEL_VERSION}" | awk -vFS=- '{ print $1 }')"
+major_version="$(echo "${KERNEL_VERSION}" | awk -vFS=. '{ print $1 }')"
+
+apt-get install -y build-essential bc curl flex bison libelf-dev
+
+mkdir -p /usr/src/linux
+curl -sL "https://www.kernel.org/pub/linux/kernel/v${major_version}.x/linux-$kernel_version.tar.gz"     | tar --strip-components=1 -xzf - -C /usr/src/linux
+cd /usr/src/linux
+zcat /proc/config.gz > .config
+make ARCH=x86 oldconfig
+make ARCH=x86 prepare
+mkdir -p /lib/modules/$(uname -r)
+ln -sf /usr/src/linux /lib/modules/$(uname -r)/source
+ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
+
+################################################################################
 # Download f-stack
 ################################################################################
+#!/bin/sh
+set -e
+set -x
+alias sudo="sudo -E"
+
+
+export FSTACK="${PWD}/f-stack"
+export IF="enp0s8"
+export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
+
+echo "FSTACK=${PWD}/f-stack" | sudo tee -a /etc/environment
+echo "IF=enp0s8" | sudo tee -a /etc/environment
+
+
 git clone https://github.com/F-Stack/f-stack.git
 
 # To "Compile dpdk in virtual machine":
