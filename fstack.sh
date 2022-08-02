@@ -10,11 +10,8 @@ set -e
 sudo apt-get -q update
 sudo apt-get -q upgrade -y
 
-sudo apt-get -q install -y \
-     make meson git gcc openssl libssl-dev \
-     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev \
+sudo apt-get -q install -y make meson git gcc openssl libssl-dev bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev net-tools pkg-config python
 
-sudo apt-get -q install -y net-tools pkg-config python
 ################################################################################
 # Download kernel headers
 ################################################################################
