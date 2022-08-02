@@ -6,10 +6,10 @@ mkdir -p /data/f-stack
 # Install git libnuma-dev
 sudo apt -y install git libnuma-dev
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
-cd /data/f-stack
+
 
 # Compile DPDK
-cd dpdk/
+cd /data/f-stack/dpdk
 meson -Denable_kmods=true build
 ninja -C build
 ninja -C build install
