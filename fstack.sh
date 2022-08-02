@@ -1,6 +1,3 @@
-apt-get -q install sudo -y
-sudo i
-
 sudo apt-get -q update
 sudo apt-get -q upgrade -y
 
