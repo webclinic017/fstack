@@ -4,7 +4,7 @@ mkdir -p /data
 mkdir -p /data/f-stack
 
 # Install git libnuma-dev
-sudo apt -y install git libnuma-dev
+sudo apt -y install git libnuma-dev meson
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
 
