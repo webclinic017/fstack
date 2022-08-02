@@ -4,9 +4,9 @@ mkdir -p /data/f-stack
 git clone https://github.com/F-Stack/f-stack.git /data/f-stack
 
 # Install libnuma-dev
- apt-get install libnuma-dev  # on Ubuntu
-
+apt-get install libnuma-dev
 cd f-stack
+
 # Compile DPDK
 cd dpdk/
 meson -Denable_kmods=true build
@@ -77,7 +77,7 @@ sudo apt install python # On ubuntu
 # For Linux:
 modprobe uio
 insmod /data/f-stack/dpdk/build/kernel/linux/igb_uio/igb_uio.ko
-insmod /data/f-stack/dpdk/build/kernel/linux/kni/rte_kni.ko carrier=on # carrier=on is necessary, otherwise need to be up `veth0` via `echo 1 > /sys/class/net/veth0/carrier`
+insmod /data/f-stack/dpdk/build/kernel/linux/kni/rte_kni.ko carrier=on
 python dpdk-devbind.py --status
 ifconfig eth0 down
-python dpdk-devbind.py --bind=igb_uio eth0 # assuming that use 10GE NIC and eth0
+python dpdk-devbind.py --bind=igb_uio eth0
