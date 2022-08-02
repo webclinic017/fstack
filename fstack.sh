@@ -52,6 +52,9 @@ ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
 
 https://gist.githubusercontent.com/dalehamel/43a6d96c63ef4adfd648c0862eb5a727/raw/37b23b4c1c41a46dc8d8e96da649d85fa644e1c6/docker-desktop-headers.sh
 
+https://raw.githubusercontent.com/bjosv/f-stack-devenv/f67ccd42ddb51a209b85e97868ff38b103d01aa0/vm/fstack/install.sh
+
+
 ################################################################################
 # Download f-stack
 ################################################################################
