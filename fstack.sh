@@ -50,6 +50,8 @@ mkdir -p /lib/modules/$(uname -r)
 ln -sf /usr/src/linux /lib/modules/$(uname -r)/source
 ln -sf /usr/src/linux /lib/modules/$(uname -r)/build
 
+https://gist.githubusercontent.com/dalehamel/43a6d96c63ef4adfd648c0862eb5a727/raw/37b23b4c1c41a46dc8d8e96da649d85fa644e1c6/docker-desktop-headers.sh
+
 ################################################################################
 # Download f-stack
 ################################################################################
