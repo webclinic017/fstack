@@ -12,7 +12,7 @@ sudo apt-get -q upgrade -y
 
 sudo apt-get -q install -y \
      make meson git gcc openssl libssl-dev \
-     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python \
+     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev \
      net-tools pkg-config
 
 ################################################################################
