@@ -10,12 +10,12 @@ export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
 echo "FSTACK=${PWD}/f-stack" | sudo tee -a /etc/environment
 echo "IF=enp0s8" | sudo tee -a /etc/environment
 
-#linux-headers-$(uname -r)
+#linux-headers-$(uname -r)  python
 
 sudo apt-get -q update
 sudo apt-get -q install -y \
      make meson git gcc openssl libssl-dev \
-     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python3.9 \
+     bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev \
      net-tools pkg-config
 
 ################################################################################
