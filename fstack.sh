@@ -13,9 +13,9 @@ sudo apt-get -q upgrade -y
 sudo apt-get -q install -y \
      make meson git gcc openssl libssl-dev \
      bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev \
-     net-tools
+     net-tools pkg-config \
 
-sudo apt-get -q install -y pkg-config python 
+sudo apt-get -q install -y  python
 ################################################################################
 # Download kernel headers
 ################################################################################
