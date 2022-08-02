@@ -2,7 +2,6 @@ apt-get -q update
 apt-get -q upgrade -y
 
 apt-get -q install sudo -y
-
 sudo i
 
 #!/bin/bash
@@ -11,7 +10,7 @@ set -e
 
 sudo apt-get -q update
 sudo apt-get -q install -y \
-     make meson git gcc openssl libssl-dev linux-headers-$(uname -r) \
+     wget nano make meson git gcc openssl libssl-dev linux-headers-$(uname -r) \
      bc libnuma1 libnuma-dev libpcre3 libpcre3-dev zlib1g-dev python \
      net-tools pkg-config
 
@@ -61,14 +60,12 @@ set -e
 set -x
 alias sudo="sudo -E"
 
-
 export FSTACK="${PWD}/f-stack"
 export IF="enp0s8"
 export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
 
 echo "FSTACK=${PWD}/f-stack" | sudo tee -a /etc/environment
 echo "IF=enp0s8" | sudo tee -a /etc/environment
-
 
 git clone https://github.com/F-Stack/f-stack.git
 
