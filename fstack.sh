@@ -1,9 +1,12 @@
+apt-get -q install sudo -y
+sudo i
+
+sudo apt-get -q update
+sudo apt-get -q upgrade -y
+
 #!/bin/bash
 set -x
 set -e
-
-apt-get -q install sudo -y
-sudo i
 
 #apt-get -q update
 
