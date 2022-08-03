@@ -1,8 +1,9 @@
 FROM  phusion/baseimage:dev-jammy-1.1.0 as build
 
 RUN apt-get -y update \
+RUN apt-get -y upgrade \
   && apt-get -y install build-essential m4 bison flex libtool automake autoconf autogen pkg-config curl xz-utils \
-       libgmp-dev libmpfr-dev libmpc-dev libelf-dev
+       libgmp-dev libmpfr-dev libmpc-dev libelf-dev sudo nano wget git 
 
 WORKDIR /tmp
 
